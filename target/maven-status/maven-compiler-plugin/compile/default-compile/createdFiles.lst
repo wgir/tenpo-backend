@@ -2,6 +2,8 @@ com\tenpo\api\EmployeeController.class
 com\tenpo\interceptor\RateLimitInterceptor$ClientRequestInfo.class
 com\tenpo\api\dto\ClientRequestDTO.class
 com\tenpo\BackendApiApplication.class
+com\tenpo\config\CachedBodyHttpServletRequest$CachedBodyServletInputStream.class
+com\tenpo\config\ContentCachingFilter.class
 com\tenpo\model\Employee$EmployeeBuilder.class
 com\tenpo\api\dto\ClientResponseDTO.class
 com\tenpo\exception\GlobalExceptionHandler.class
@@ -18,6 +20,7 @@ com\tenpo\api\dto\TransactionRequestDTO$TransactionRequestDTOBuilder.class
 com\tenpo\model\Transaction.class
 com\tenpo\api\ClientController.class
 com\tenpo\api\dto\EmployeeRequestDTO$EmployeeRequestDTOBuilder.class
+com\tenpo\config\CachedBodyHttpServletRequest.class
 com\tenpo\api\dto\ClientRequestDTO$ClientRequestDTOBuilder.class
 com\tenpo\api\dto\EmployeeRequestDTO.class
 com\tenpo\api\dto\TransactionRequestDTO.class
