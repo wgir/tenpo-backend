@@ -1,0 +1,422 @@
+{
+    "info": {
+        "_postman_id": "b3e3e3e3-a123-4b56-8c7d-e90f12345678",
+        "name": "Tenpo Backend API",
+        "description": "Postman collection to test the Tenpo API challenge endpoints.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Clients",
+            "item": [
+                {
+                    "name": "Create Client",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Tenpo Corp\",\n    \"rut\": \"12.345.678-9\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/client",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "client"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get All Clients",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/client",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "client"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Client by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/client/1",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "client",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Client",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Tenpo Corp Updated\",\n    \"rut\": \"12.345.678-9\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/client/1",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "client",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Client",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/client/1",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "client",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Employees",
+            "item": [
+                {
+                    "name": "Create Employee",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"John Doe\",\n    \"rut\": \"23.456.789-0\",\n    \"client_id\": 1\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/employee",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "employee"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get All Employees",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/employee",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "employee"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Employee by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/employee/1",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "employee",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Employee",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"John Doe Updated\",\n    \"rut\": \"23.456.789-0\",\n    \"client_id\": 1\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/employee/1",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "employee",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Employee",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/employee/1",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "employee",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Transactions",
+            "item": [
+                {
+                    "name": "Create Transaction",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"amount\": 5000,\n    \"merchant_or_business\": \"Amazon\",\n    \"date\": \"2026-02-03T12:00:00\",\n    \"employee_id\": 1,\n    \"client_id\": 1\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/transaction",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "transaction"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get All Transactions",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/transaction",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "transaction"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Transaction by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/transaction/1",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "transaction",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Transaction",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"amount\": 6000,\n    \"merchant_or_business\": \"Amazon Prime\",\n    \"date\": \"2026-02-03T12:00:00\",\n    \"employee_id\": 1,\n    \"client_id\": 1\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/transaction/1",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "transaction",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Transaction",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/transaction/1",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "transaction",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Test Negative Amount (Fail)",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"amount\": -100,\n    \"merchant_or_business\": \"Invalid\",\n    \"date\": \"2023-10-01T12:00:00\",\n    \"employee_id\": 1,\n    \"client_id\": 1\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/transaction",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "transaction"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Test Future Date (Fail)",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"amount\": 1000,\n    \"merchant_or_business\": \"Future Shop\",\n    \"date\": \"2027-10-01T12:00:00\",\n    \"employee_id\": 1,\n    \"client_id\": 1\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/transaction",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "transaction"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:8080",
+            "type": "string"
+        }
+    ]
+}

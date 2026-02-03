@@ -1,6 +1,6 @@
 ## Architecture
 - **Layering**: Controller -> Service -> Repository. Never bypass the Service layer.
-- **DTOs**: Controllers must never return Entities. Map Entities to ResponseDTOs.
+- **DTOs**: Controllers must never return Entities. Map Entities to ResponseDTOs. Using records.
 - **Dependency Injection**: Always use Constructor Injection (no @Autowired on fields).
 
 ## Coding Standards
@@ -17,6 +17,10 @@
 ## Naming Conventions
 - Interfaces: Do not use `I` prefix (e.g., `UserService`, not `IUserService`).
 - Implementations: Append `Impl` only if necessary, otherwise rely on the interface name if strictly needed (Spring generally encourages class-based injection if no multiple impls exist).
+- Use camelCase for variable and method names.
+- Use PascalCase for class names.
+- Use snake_case for file names.
+- Use snake_case for package names.
 
 ## Code Organization
 - Use the following package structure:
