@@ -1,17 +1,14 @@
-# Use official JDK 21 image
-FROM eclipse-temurin:21-jdk-alpine as build
+# Use official Maven image for building
+FROM maven:3.9.6-eclipse-temurin-21-alpine as build
 WORKDIR /app
 
-# Copy maven executable and pom.xml
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-# Resolve dependencies
-RUN ./mvnw dependency:go-offline
+# Copy pom.xml and resolve dependencies separately (for caching)
+COPY pom.xml ./
+RUN mvn dependency:go-offline -B
 
-# Copy source code
+# Copy source code and build
 COPY src ./src
-# Build the application
-RUN ./mvnw package -DskipTests
+RUN mvn package -DskipTests -B
 
 # Run stage
 FROM eclipse-temurin:21-jre-alpine
