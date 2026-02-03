@@ -1,0 +1,70 @@
+## Architecture
+- **Layering**: Controller -> Service -> Repository. Never bypass the Service layer.
+- **DTOs**: Controllers must never return Entities. Map Entities to ResponseDTOs.
+- **Dependency Injection**: Always use Constructor Injection (no @Autowired on fields).
+
+## Coding Standards
+- **Build Tool**: Maven. (Do not use Gradle).
+- **Spring Boot Version**: 3.4.1
+- **Java Version**: 21
+- **Database Engine**: PostgreSQL 18.1
+- **Lombok**: Use @Data, @RequiredArgsConstructor, and @Builder.
+- **Error Handling**: Use a GlobalExceptionHandler with ProblemDetails.
+- **Testing**:
+  - Unit tests for Services (Mockito).
+  - Integration tests for Controllers (@WebMvcTest or @SpringBootTest).
+  - Use AssertJ for assertions.
+## Naming Conventions
+- Interfaces: Do not use `I` prefix (e.g., `UserService`, not `IUserService`).
+- Implementations: Append `Impl` only if necessary, otherwise rely on the interface name if strictly needed (Spring generally encourages class-based injection if no multiple impls exist).
+
+## Code Organization
+- Use the following package structure:
+  - `com.tenpo.api`: REST controllers.
+  - `com.tenpo.service`: Business logic.
+  - `com.tenpo.repository`: Data access.
+  - `com.tenpo.model`: Domain models.
+  - `com.tenpo.config`: Configuration classes.
+  - `com.tenpo.util`: Utility classes.
+
+## Key Principles:
+- Convention over Configuration
+- Standalone, production-grade applications
+- Opinionated 'starter' dependencies
+- Dependency Injection (IoC)
+- Aspect-Oriented Programming (AOP)
+- Show SQL queries in console
+
+## Core Annotations:
+- @SpringBootApplication: Main entry point
+- @RestController / @Controller: Web layer
+- @Service: Business logic layer
+- @Repository: Data access layer
+- @Component: Generic bean
+
+## Data Access:
+- Spring Data JPA for relational DBs
+- Hibernate as JPA implementation
+- Repository interfaces (JpaRepository)
+- Transaction management (@Transactional)
+- Flyway/Liquibase for migrations
+
+## Configuration:
+- application.yml
+- Profiles (dev, test, prod)
+- @ConfigurationProperties for type-safe config
+- @Value for simple injection
+- Externalized configuration
+
+## Observability:
+- Spring Boot Actuator for metrics/health
+- Micrometer for metrics export
+- Distributed tracing (Zipkin/Otel)
+- Structured logging
+
+## Best Practices:
+- Use constructor injection (avoid @Autowired on fields)
+- Handle exceptions globally (@ControllerAdvice)
+- Validate inputs (@Valid, @NotNull)
+- Write integration tests (@SpringBootTest)
+- Use Lombok to reduce boilerplate
