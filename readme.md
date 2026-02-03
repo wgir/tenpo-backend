@@ -29,6 +29,11 @@ This is the easiest way to run everything (API + Database) together.
     ```bash
     docker-compose up --build
     ```
+
+    In case you must update the image
+    ```bash
+    docker-compose down -v
+    ```
 2.  The API will be available at `http://localhost:8080`.
 
 ### Method 2: Maven (Local Run)
