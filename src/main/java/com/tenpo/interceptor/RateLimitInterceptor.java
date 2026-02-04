@@ -7,6 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -17,7 +20,7 @@ public class RateLimitInterceptor implements HandlerInterceptor {
 
     private final Map<Integer, ClientRequestInfo> clientRequests = new ConcurrentHashMap<>();
     private static final int MAX_REQUESTS_PER_MINUTE = 3;
-    private final com.fasterxml.jackson.databind.ObjectMapper objectMapper = new com.fasterxml.jackson.databind.ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
     public boolean preHandle(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response,
@@ -31,7 +34,7 @@ public class RateLimitInterceptor implements HandlerInterceptor {
         Integer clientId;
         try {
             // Read clientId from the cached body
-            com.fasterxml.jackson.databind.JsonNode node = objectMapper.readTree(request.getInputStream());
+            JsonNode node = objectMapper.readTree(request.getInputStream());
             if (node.has("client_id")) {
                 clientId = node.get("client_id").asInt();
             } else if (node.has("clientId")) {
