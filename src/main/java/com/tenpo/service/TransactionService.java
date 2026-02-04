@@ -101,6 +101,7 @@ public class TransactionService {
                 .merchantOrBusiness(transaction.getMerchantOrBusiness())
                 .date(transaction.getDate())
                 .employeeId(transaction.getEmployee().getId())
+                .clientId(transaction.getEmployee().getClient().getId())
                 .build();
     }
 }
